@@ -17,14 +17,29 @@
       border-radius: 0 !important;
       margin: 20px 90px 20px 36px !important;
       opacity: 1 !important;
-  }
+    }
   </style>
   <!-- Webpack rendered CSS -->
   {% render_bundle 'main' 'css' %}
   <script type="text/javascript">
-    (function (d, src, c) { var t = d.scripts[d.scripts.length - 1], s = d.createElement('script'); s.id = 'la_x2s6df8d'; s.async = true; s.src = src; s.onload = s.onreadystatechange = function () { var rs = this.readyState; if (rs && (rs != 'complete') && (rs != 'loaded')) { return; } c(this); }; t.parentElement.insertBefore(s, t.nextSibling); })(document,
-      'https://tipex.ladesk.com/scripts/track.js',
-      function (e) { window.chatButton = LiveAgent.createButton('xir81kbe', e); });
+    (function (d, src, c) {
+      var t = d.scripts[d.scripts.length - 1], s = d.createElement('script');
+      s.id = 'la_x2s6df8d';
+      s.async = true;
+      s.src = src;
+      s.onload = s.onreadystatechange = function () {
+        var rs = this.readyState;
+        if (rs && (rs != 'complete') && (rs != 'loaded'))
+        {
+          return;
+        }
+        c(this);
+      };
+      t.parentElement.insertBefore(s, t.nextSibling);
+    })(document,'https://tipex.ladesk.com/scripts/track.js',function (e) {
+        window.chatButton = LiveAgent.createButton('xir81kbe', e);
+        //window.contactbutton = LiveAgent.createButton('obb60gip', e);
+    });
   </script>
 
   <script type="text/javascript">
