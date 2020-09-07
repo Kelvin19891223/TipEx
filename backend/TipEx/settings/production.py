@@ -6,10 +6,9 @@ from sentry_sdk.integrations.django import DjangoIntegration
 from .base import *  # noqa
 
 
-DEBUG = True
+DEBUG = False
 
-#SECRET_KEY =  config("SECRET_KEY")
-SECRET_KEY = "vnzyrmtypcwe(66jn)kb9pm(994clw!3@vf=_2w6=@d(5yg^m-"
+SECRET_KEY = config("SECRET_KEY")
 
 DATABASES = {
     'default': {
@@ -23,54 +22,51 @@ DATABASES = {
             'sql_mode': 'traditional',
         },
     }
-    # "default": {"ENGINE": "django.db.backends.sqlite3", "NAME": base_dir_join("db.sqlite3"),}
 }
-
-# DATABASES = {
-#     "default": config('DATABASE_URL', cast=db_url),
-# }
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
-#ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv())
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '*']
+ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv())
 
 STATIC_ROOT = base_dir_join("staticfiles")
+print(STATIC_ROOT,"STATIC_ROOT")
 STATIC_URL = "/static/"
 
 MEDIA_ROOT = base_dir_join("mediafiles")
 MEDIA_URL = "/media/"
 
-SERVER_EMAIL = "kelvin1223987@gmail.com"
+SERVER_EMAIL = "foo@example.com"
 
 EMAIL_HOST = "smtp.sendgrid.net"
-EMAIL_HOST_USER = ""#config("SENDGRID_USERNAME")
-EMAIL_HOST_PASSWORD = ""#config("SENDGRID_PASSWORD")
+EMAIL_HOST_USER = config("SENDGRID_USERNAME")
+EMAIL_HOST_PASSWORD = config("SENDGRID_PASSWORD")
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
 # Security
-SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
-SECURE_SSL_REDIRECT = True
-SESSION_COOKIE_SECURE = True
+#SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+#SECURE_SSL_REDIRECT = True
+#SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
-SECURE_HSTS_SECONDS = 3600
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+#SECURE_HSTS_SECONDS = 3600
+#SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
-SECURE_CONTENT_TYPE_NOSNIFF = True
-SECURE_BROWSER_XSS_FILTER = True
-X_FRAME_OPTIONS = "DENY"
+#SECURE_CONTENT_TYPE_NOSNIFF = True
+#SECURE_BROWSER_XSS_FILTER = True
+#X_FRAME_OPTIONS = "DENY"
 
 # Webpack
 WEBPACK_LOADER["DEFAULT"]["CACHE"] = True
 
 # Celery
-REDIS_URL = 'redis://127.0.0.1:6379/0'
-CELERY_BROKER_URL = REDIS_URL#config("REDIS_URL")
-CELERY_RESULT_BACKEND = REDIS_URL#config("REDIS_URL")
+CELERY_BROKER_URL = config("REDIS_URL")
+CELERY_RESULT_BACKEND = config("REDIS_URL")
 CELERY_SEND_TASK_ERROR_EMAILS = True
 
 # Whitenoise
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+#STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+DEFAULT_FILE_STORAGE = "django.core.files.storage.FileSystemStorage"
+STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
+
 MIDDLEWARE.insert(  # insert WhiteNoiseMiddleware right after SecurityMiddleware
     MIDDLEWARE.index("django.middleware.security.SecurityMiddleware") + 1,
     "whitenoise.middleware.WhiteNoiseMiddleware",

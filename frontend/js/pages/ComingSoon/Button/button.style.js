@@ -22,6 +22,14 @@ const ButtonStyle = styled.button`
   padding-right: 15px;
   border: 0;
   transition: all 0.3s ease;
+  @media (max-width: 600px) {
+    margin-top: 0!important;
+  }
+  @media (max-width: 575px) {
+    width: 80px!important;
+    margin-left: 5px!important;
+    margin-right: 5px!important;
+  }
   span.btn-text {
     padding-left: 4px;
     padding-right: 4px;

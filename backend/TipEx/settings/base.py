@@ -23,7 +23,7 @@ ADMINS = (("Admin", "kelvin1223987@gmail.com"),)
 
 AUTH_USER_MODEL = "users.User"
 
-ALLOWED_HOSTS = ['localhost','127.0.0.1','*']
+ALLOWED_HOSTS = ['localhost','127.0.0.1','192.168.1.103','*']
 
 INSTALLED_APPS = [
     "django.contrib.admin",

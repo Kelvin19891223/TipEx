@@ -10,7 +10,7 @@
     "test:watch": "npm test -- --watch",
     "test:update": "npm test -- --u",
     "start": "babel-node server.js",
-    "build": "NODE_ENV=production webpack -p --progress --colors --config webpack.prod.config.js --bail",
+    "build": "cross-env NODE_ENV=production webpack -p --progress --colors --config webpack.prod.config.js --bail",
     "lint": "eslint frontend",
     "coverage": "jest --coverage"
   },
@@ -32,6 +32,7 @@
     "chart.js": "^2.9.3",
     "classnames": "~2.2.5",
     "connected-react-router": "^6.8.0",
+    "cross-env": "^7.0.2",
     "css-loader": "~3.4.0",
     "expose-loader": "~0.7.3",
     "file-loader": "~5.1.0",

@@ -73,11 +73,11 @@ const ComingSoon = props => {
 
   return (
     <div className={classes.panel}>
-      <Grid container spacing={5}>
-        <Grid item sm={12} md={6} lg={6} xl={6} xs={6}>
+      <Grid container>
+        <Grid item sm={12} md={6} lg={6} xl={6} xs={12}>
           <img className={classes.img} alt="Coming Soon" src={ComingSVG}/>
         </Grid>
-        <Grid item sm={12} md={6} lg={6} xl={6} xs={6}>
+        <Grid item sm={12} md={6} lg={6} xl={6} xs={12}>
           <div className={classes.title}>
             We're coming soon.
           </div>

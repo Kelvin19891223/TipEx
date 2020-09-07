@@ -15,6 +15,11 @@ const useStyles = makeStyles(() => ({
   container: {
     paddingLeft: '0%',
     paddingRight: '0%',
+    ['@media (min-width:320px)']: { // eslint-disable-line no-useless-computed-key
+      maxWidth: 1280,
+      paddingLeft: '10px',
+      paddingRight: '10px',
+    },
     ['@media (min-width:1280px)']: { // eslint-disable-line no-useless-computed-key
       maxWidth: 1280,
       paddingLeft: '0%',

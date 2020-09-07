@@ -11,12 +11,12 @@ const useStyles = makeStyles(() => ({
     boxShadow: 'none',
     width: 98,
     height: 42,
-    background: '#19E07D 0% 0% no-repeat padding-box',
-    color: '#fff',
+    background: '#19E07D 0% 0% no-repeat padding-box!important',
+    color: '#fff!important',
     borderRadius: 4,
     '&:hover': {
-      background: '#fff',
-      color: '#19E07D'
+      background: '#fff!important',
+      color: '#19E07D!important'
     }
   },
 
@@ -30,6 +30,12 @@ const Topbar = props => {
   const { className, ...rest } = props;
 
   const classes = useStyles();
+
+  const ClickContactForm = () => {
+    try {
+      window.contactbutton.onClick()
+    } catch(err) {}
+  }
 
   return (
 
@@ -45,9 +51,8 @@ const Topbar = props => {
 
 
       <Button
-        href="#"
-        variant="contained"
-        className={clsx(classes.button, className)}
+        onClick={ClickContactForm}
+        className={clsx(classes.button)}
       >
         Contact
       </Button>

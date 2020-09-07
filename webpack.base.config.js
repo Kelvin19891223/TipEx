@@ -29,14 +29,14 @@ module.exports = {
         ],
       },
       {
-        test: /\.(svg)(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.(svg|png)(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'url-loader?limit=100000',
       },
-      {
-        test: /\.(jpg|png)?$/,
-        loader: ['file-loader?name=i-[hash].[ext]'],
-      },
     ],
+  },
+  performance: {
+    maxEntrypointSize: 5120000,
+    maxAssetSize: 5120000
   },
   plugins: [
     // defined in local or prod
