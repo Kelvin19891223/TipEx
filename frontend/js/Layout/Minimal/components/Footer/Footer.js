@@ -77,10 +77,6 @@ const useStyles = makeStyles(() => ({
     letterSpacing: 0,
     color: '#9FA4AF'
   },
-
-  buttongroup: {
-    maxWidth: 200,
-  }
 }));
 
 const Footer = props => {
@@ -97,7 +93,7 @@ const Footer = props => {
         <Grid item sm={12} md={6} lg={6} xl={6} xs={12} className={classes.copyright}>
           Copyright © 2020 TipEx All Rights Reserved.
         </Grid>
-        <Grid item sm={12} md={6} lg={6} xl={6} xs={12} className={classes.buttongroup}>
+        <Grid item sm={12} md={6} lg={6} xl={6} xs={12}>
           <Info>
             <InfoItem>
               <Link href="https://www.instagram.com/TipExAu/" target="_blank">
