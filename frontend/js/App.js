@@ -6,11 +6,12 @@ import configureStore from 'redux/store';
 import { ConnectedRouter } from 'connected-react-router';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
-import { Main as MainLayout, Minimal as MinimalLayout, RouteWithLayout } from './Layout';
+import { Main as MainLayout, Minimal as MinimalLayout, RouteWithLayout, HomeLayout } from './Layout';
 
 import {
   IndexPage as IndexView,
-  ComingSoon as ComingSoonView
+  ComingSoon as ComingSoonView,
+  HelpPage as HelpView
 } from './pages';
 import { history } from './redux/reducers';
 
@@ -27,12 +28,18 @@ const App = () => (
           path="/"
           exact
         />
-        {/* <RouteWithLayout
+        <RouteWithLayout
           component={IndexView}
-          layout={MinimalLayout}
-          path="/"
+          layout={HomeLayout}
+          path="/home"
           exact
-        /> */}
+        />
+        <RouteWithLayout
+          component={HelpView}
+          layout={HomeLayout}
+          path="/help"
+          exact
+        />
       {/* </Switch> */}
     </Router>
   </Provider>

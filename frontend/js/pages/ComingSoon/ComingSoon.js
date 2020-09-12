@@ -75,21 +75,25 @@ const ComingSoon = props => {
     <div className={classes.panel}>
       <Grid container>
         <Grid item sm={12} md={6} lg={6} xl={6} xs={12}>
-          <img className={classes.img} alt="Coming Soon" src={ComingSVG}/>
+          <div className="p10">
+            <img className={classes.img} alt="Coming Soon" src={ComingSVG}/>
+          </div>
         </Grid>
         <Grid item sm={12} md={6} lg={6} xl={6} xs={12}>
-          <div className={classes.title}>
-            We're coming soon.
-          </div>
-          <div className={classes.description}>
-            Our website is under construction. We'll be here soon with our new awesome site, subscribe to be notified.
-          </div>
+          <div className="p10">
+            <div className={classes.title}>
+              We're coming soon.
+            </div>
+            <div className={classes.description}>
+              Our website is under construction. We'll be here soon with our new awesome site, subscribe to be notified.
+            </div>
 
-          <div className={classes.numberGroup}>
-            <NormalClock countdown={deadline} />
-          </div>
-          <div className={classes.buttonGroup}>
-            <ContactForm />
+            <div className={classes.numberGroup}>
+              <NormalClock countdown={deadline} />
+            </div>
+            <div className={classes.buttonGroup}>
+              <ContactForm />
+            </div>
           </div>
         </Grid>
       </Grid>

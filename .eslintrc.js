@@ -54,7 +54,8 @@ module.exports = {
     'sonarjs/no-all-duplicated-branches': 'off',
     'func-names': 'off',
     'babel/no-unused-expressions': 'off',
-    'consistent-return': 'off'
+    'consistent-return': 'off',
+    'radix': 'off'
   },
   env: {
     es6: true,

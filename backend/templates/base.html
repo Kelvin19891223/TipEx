@@ -38,14 +38,28 @@
       t.parentElement.insertBefore(s, t.nextSibling);
     })(document,'https://tipex.ladesk.com/scripts/track.js',function (e) {
         window.chatButton = LiveAgent.createButton('xir81kbe', e);
-        //window.contactbutton = LiveAgent.createButton('obb60gip', e);
     });
   </script>
 
   <script type="text/javascript">
-  (function(d, src, c) { var t=d.scripts[d.scripts.length - 1],s=d.createElement('script');s.id='la_x2s6df8d';s.async=true;s.src=src;s.onload=s.onreadystatechange=function(){var rs=this.readyState;if(rs&&(rs!='complete')&&(rs!='loaded')){return;}c(this);};t.parentElement.insertBefore(s,t.nextSibling);})(document,
-  'https://tipex.ladesk.com/scripts/track.js',
-  function(e){ window.contactbutton = LiveAgent.createButton('obb60gip', e); });
+  (function(d, src, c) {
+    var t=d.scripts[d.scripts.length - 1],s=d.createElement('script');
+    s.id='la_x2s6df8d';
+    s.async=true;
+    s.src=src;
+    s.onload=s.onreadystatechange=function(){
+      var rs=this.readyState;
+      if(rs&&(rs!='complete')&&(rs!='loaded'))
+      {
+        return;
+      }
+      c(this);
+    };
+    t.parentElement.insertBefore(s,t.nextSibling);
+  })(document,  'https://tipex.ladesk.com/scripts/track.js',
+  function(e){
+    window.contactbutton = LiveAgent.createButton('obb60gip', e);
+  });
   </script>
 
 </head>
@@ -63,7 +77,7 @@
   {% render_bundle 'vendors~main' 'js' 'DEFAULT' %} {% render_bundle 'main' 'js' 'DEFAULT' %}
   {% block scripts %}{% endblock %}
 
-  <div class="live-button" onClick="window.chatButton.onClick()">
+  <div class="live-button" onClick="window.chatButton.onClick();">
     <div
       style="right: 20px;bottom:80px;-ms-transform-origin:100% 100%; -webkit-transform-origin:100% 100%; transform-origin:100% 100%; z-index: 999997; position: fixed;">
       <!-- CircleRoll -->

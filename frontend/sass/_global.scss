@@ -8,6 +8,61 @@
   src: url(./../fonts/Nunito-SemiBold.ttf);
 }
 
+@font-face {
+  font-family: Roboto-Regular;
+  src: url(./../fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: Roboto-Medium;
+  src: url(./../fonts/Roboto-Medium.ttf);
+}
+
 .field-wrapper {
   width: 100%;
+}
+
+.p10 {
+  padding: 10px;
+}
+
+.navbar-nav a {
+  display: flex;
+}
+
+.menubar-nav .navbar-nav a {
+  padding: 25px!important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #EBEEF4;
+  font-size: 14px;
+  font-family: Roboto;
+  line-height: 20px;
+}
+
+.navbar-dark .navbar-nav .nav-link.active {
+  color: #0E2856;
+  background-color: #FFFFFF;
+}
+
+.navbar {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.menubar-nav .navbar-brand {
+  margin-bottom: 10px;
+}
+
+body {
+  background: #f6f6f7;
+}
+
+.white-bg {
+  background: #fff;
+}
+
+.border-radius-5 {
+  border-radius: 5px;
 }

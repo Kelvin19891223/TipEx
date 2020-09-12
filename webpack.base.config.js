@@ -29,7 +29,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(svg|png)(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.(svg|png|jpg)(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'url-loader?limit=100000',
       },
     ],

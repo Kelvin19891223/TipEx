@@ -69,16 +69,6 @@ export default function ContactForm() {
       setError(true);
       start();
     }
-
-    // console.log('contact form');
-
-    // setTimeout(function() {
-    //   setPending(false);
-    //   setSuccess(true);
-    //   setError(false);
-    //   start();
-    //   setValue('');
-    // }, 2000);
   };
 
   const handleChange = event => {
