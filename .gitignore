@@ -51,3 +51,4 @@ tmp_email/
 /backend/staticfiles
 /backend/TipEx/settings/production.py
 /backend/.env
+/frontend/webpack_bundles
