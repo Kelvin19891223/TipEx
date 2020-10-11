@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import { useDispatch, useSelector } from 'react-redux';
-import { BlackButton } from '../../component/Button'
+import { BlackButton, GreenButton } from '../../component/Button'
 import {Container,Grid, Link} from '@material-ui/core';
 import IMG from '../../../images/banner.jpg'
 import clsx from 'clsx';
@@ -22,6 +22,8 @@ import { twitter } from 'react-icons-kit/icomoon/twitter';
 import {instagram} from 'react-icons-kit/fa/instagram'
 import Nav from 'react-bootstrap/Nav';
 import NavLink from 'react-bootstrap/NavLink';
+import Carousel from 'react-bootstrap/Carousel'
+
 
 const useStyles = makeStyles(() => ({
   firstLine: {
@@ -58,7 +60,6 @@ const useStyles = makeStyles(() => ({
     'box-shadow': '0px 1px 5px #C1C8D780;',
     minHeight: 250,
     padding: '11px 0px',
-
     "& nav": {
       paddingLeft: 65
     },
@@ -82,6 +83,11 @@ const useStyles = makeStyles(() => ({
       'border': 'none!important',
       'border-bottom': '2px solid #0E2856!important'
     }
+  },
+
+  scrollView: {
+    height: 500,
+    overflowY: 'scroll',
   },
 
   line: {
@@ -181,6 +187,27 @@ const useStyles = makeStyles(() => ({
     fontFamily: 'Roboto',
     fontSize: 10,
     color: '#949FB7'
+  },
+
+  banner: {
+    height: 140
+  },
+
+  caption: {
+    position: 'absolute',
+    textAlign: 'left',
+    left: 30,
+    bottom: 10,
+    padding: 0
+  },
+
+  captiondescription: {
+    marginTop: 5,
+    fontFamily: 'Roboto',
+    fontSize: 19,
+    fontWeight: 400,
+    lineHeight: '23px',
+    color: '#FFFFFF'
   }
 }));
 
@@ -234,13 +261,58 @@ const InfoIcon = styled.div`
 const IndexPage = props => {
   const classes = useStyles();
 
+  const [index, setIndex] = useState(0);
+
+  const handleSelect = (selectedIndex, e) => {
+    setIndex(selectedIndex);
+  };
+
   return (
     <div>
       <Grid container spacing={0}>
         <Grid item lg={8} md={8} xs={12}>
           <div className={classes.firstLine}>
-            <div>
-              <img src={IMG} width="100%" height="140" alt="logo" className={classes.bannerImage}/>
+            <div className={classes.banner}>
+              <Carousel activeIndex={index} onSelect={handleSelect}>
+                <Carousel.Item>
+                  <img
+                    width="100%" height="140"
+                    src={IMG}
+                    alt="First slide"
+                    className={classes.bannerImage}
+                  />
+                  <Carousel.Caption className={classes.caption}>
+                    <div>
+                      <GreenButton
+                        title="VIC RACING"
+                        width={94}
+                        height={32}
+                        fontSize={14}
+                      />
+                    </div>
+                    <div className={classes.captiondescription}>Nature Strip will be the hot favourite in his return</div>
+                  </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img
+                    width="100%" height="140"
+                    src={IMG}
+                    alt="First slide"
+                    className={classes.bannerImage}
+                  />
+                  <Carousel.Caption className={classes.caption}>
+                    <div>
+                      <GreenButton
+                        title="VIC RACING"
+                        width={94}
+                        height={32}
+                        fontSize={14}
+                      />
+                    </div>
+                    <div className={classes.captiondescription}>Nature Strip will be the hot favourite in his return</div>
+                  </Carousel.Caption>
+                </Carousel.Item>
+              </Carousel>
             </div>
 
             <div className={clsx(classes.tipedHorse,"white-bg")}>
@@ -297,6 +369,7 @@ const IndexPage = props => {
             <div className={clsx(classes.detailview, "white-bg")}>
               <Tabs defaultActiveKey="trending" id="trending">
                 <Tab eventKey="trending" title="TRENDING">
+                  <div className={classes.scrollView}>
                   {
                     [1,2,3,4,5,6,7,8,9,10].map((item, key)=> {
                       return <TrendingCard
@@ -312,8 +385,10 @@ const IndexPage = props => {
                       />
                     })
                   }
+                  </div>
                 </Tab>
                 <Tab eventKey="lastest" title="LASTEST">
+                  <div className={classes.scrollView}>
                   {
                     [2,3,4,5,10].map((item, key)=> {
                       return <TrendingCard
@@ -329,8 +404,10 @@ const IndexPage = props => {
                       />
                     })
                   }
+                  </div>
                 </Tab>
                 <Tab eventKey="feed" title="FEED 3">
+                  <div className={classes.scrollView}>
                   {
                     [1,2,3,4,5,6,7,8].map((item, key)=> {
                       return <TrendingCard
@@ -346,6 +423,7 @@ const IndexPage = props => {
                       />
                     })
                   }
+                  </div>
                 </Tab>
               </Tabs>
             </div>

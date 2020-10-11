@@ -3,11 +3,6 @@ import { Link as RouterLink, Link } from 'react-router-dom';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
-import { AppBar, Toolbar } from '@material-ui/core';
-import LogoSVG from '../../../../../images/logo.png'
-import styled from 'styled-components';
-import { Search } from '../../../../component/Search';
-import { BlackButton } from '../../../../component/Button';
 import { Icon } from 'react-icons-kit';
 import { home } from 'react-icons-kit/icomoon/home';
 import Navbar from 'react-bootstrap/Navbar';
@@ -16,7 +11,6 @@ import NavbarBrand from 'react-bootstrap/NavbarBrand';
 import Nav from 'react-bootstrap/Nav';
 import NavLink from 'react-bootstrap/NavLink';
 import NavbarCollapse from 'react-bootstrap/NavbarCollapse';
-import {Container,Grid} from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
   topbar: {
@@ -48,7 +42,8 @@ const useStyles = makeStyles(() => ({
     background: '#0E2856',
     color: '#EBEEF4',
     alignItems: 'center',
-    marginBottom: 16,
+    marginBottom: 20,
+    padding: 0
   },
 
   menu : {
@@ -85,12 +80,12 @@ const Menubar = props => {
   return (
     <div className={classes.bg}>
       <div className={clsx(classes.menuview, "container", "menubar-nav")}>
-        <Navbar collapseOnSelect expand="md" bg="dark" variant="dark" className={classes.menubar}>
+        <Navbar collapseOnSelect expand="md" variant="dark" className={classes.menubar}>
           <NavbarBrand href="/">
             <Icon icon={home} size={25} />
           </NavbarBrand>
-          <NavbarToggle aria-controls="responsive-navbar-nav" />
-          <NavbarCollapse id="responsive-navbar-nav">
+          <NavbarToggle aria-controls="responsive-navbar-menubar" />
+          <NavbarCollapse id="responsive-navbar-menubar">
             <Nav className="mr-auto">
               <NavLink href="#discover">Discover</NavLink>
               <NavLink href="#competition">Competitions</NavLink>

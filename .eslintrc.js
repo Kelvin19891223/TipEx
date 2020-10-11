@@ -55,7 +55,10 @@ module.exports = {
     'func-names': 'off',
     'babel/no-unused-expressions': 'off',
     'consistent-return': 'off',
-    'radix': 'off'
+    'radix': 'off',
+    'react/no-unescaped-entities': 'off',
+    'unicorn/import-index': 'off',
+    'import/no-useless-path-segments': 'off'
   },
   env: {
     es6: true,
@@ -72,5 +75,7 @@ module.exports = {
     react: {
         "version": "detect"
     },
-  }
+  },
+  "no-script-url": "off",
+  "eslint no-undef": "off"
 }

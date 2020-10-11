@@ -41,7 +41,17 @@
   line-height: 20px;
 }
 
-.navbar-dark .navbar-nav .nav-link.active {
+#responsive-navbar-menubar .navbar-nav .nav-link.active {
+  color: #0E2856;
+  background-color: #FFFFFF;
+}
+
+#responsive-navbar-nav .navbar-nav {
+  justify-content: flex-end;
+  width: 100%;
+}
+
+#responsive-navbar-menubar .navbar-nav a:hover {
   color: #0E2856;
   background-color: #FFFFFF;
 }
@@ -65,4 +75,87 @@ body {
 
 .border-radius-5 {
   border-radius: 5px;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+  height: 5px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(216,216,215,.5);
+  -webkit-box-shadow: 0 0 1px rgba(243, 151, 151, 0.5);
+}
+
+// .carousel-control-prev, .carousel-control-next,
+.carousel-indicators {
+  display: none!important;
+}
+
+.carousel-control-prev, .carousel-control-next {
+  width: 20px!important;
+}
+
+// Footer
+footer {
+  width: 100%;
+  padding: 0 24px;
+  /* Set the fixed height of the footer here */
+  height: 380px;
+}
+
+/* Taller footer on small screens */
+@media (max-width: 34em) {
+    body {
+      margin-bottom: 500px;
+    }
+    .footer {
+      height: 500px;
+    }
+}
+
+/* Sticky footer style and color
+-------------------------------------------------- */
+footer {
+  padding-top: 30px;
+  color: #bbb;
+}
+
+footer a {
+  color: #7D7D7D;
+  text-decoration:none;
+  font-size: 10px;
+  font-family: Roboto;
+  line-height: 20px;
+}
+
+footer a:hover, footer a:focus {
+  color: #aaa;
+  text-decoration:none;
+  border-bottom:1px dotted #999;
+}
+
+footer .list-unstyled {
+  margin-top: 16px;
+  padding-left: 50px;
+}
+
+.list-unstyled-1 {
+  padding-left: 50px;
+}
+
+.responsive-navbar-footer-menu {
+  margin-top: 25px;
+  padding: 0!important;
+}
+
+.responsive-navbar-footer-menu a {
+  color: #000000!important;
+  font-family: Open Sans;
+  font-size: 10px;
+}
+
+.responsive-navbar-footer-menu a:first-child {
+  padding-left: 0px!important;
 }

@@ -3,19 +3,13 @@ import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import clsx from 'clsx';
 import { Topbar } from './components';
-import { Icon } from 'react-icons-kit';
-import { home } from 'react-icons-kit/icomoon/home';
-import Navbar from 'react-bootstrap/Navbar';
-import NavbarToggle from 'react-bootstrap/NavbarToggle';
-import NavbarBrand from 'react-bootstrap/NavbarBrand';
-import Nav from 'react-bootstrap/Nav';
-import NavLink from 'react-bootstrap/NavLink';
-import NavbarCollapse from 'react-bootstrap/NavbarCollapse';
 import Menubar from './components/Menubar';
+import Footer from './components/Footer';
 
 const useStyles = makeStyles(() => ({
   root: {
-    height: '100%'
+    height: '100%',
+    width: '100%'
   },
   content: {
     height: '100%',
@@ -59,6 +53,12 @@ const useStyles = makeStyles(() => ({
     minHeight: 600,
     display: 'flex',
     margin: 'auto',
+  },
+
+  line: {
+    marginTop: 25,
+    borderBottom: '1px solid #EBEBEB',
+    height: 1,
   }
 }));
 
@@ -84,6 +84,16 @@ const HomeLayout = props => {
           </div>
         </div>
       </div>
+
+      <div className="white-bg">
+        <div className={classes.line}>&nbsp;</div>
+        <div className={clsx(classes.container, "container")}>
+          <div className={classes.root}>
+            <Footer />
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 };

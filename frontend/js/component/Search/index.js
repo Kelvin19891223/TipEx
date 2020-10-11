@@ -43,7 +43,7 @@ const useStyles = makeStyles({
     justifyContent: 'space-between',
     alignItems: 'center',
     marginRight: 10,
-    ['@media (max-width:768px)']: {
+    '@media (max-width:768px)': {
       display: 'none'
     }
   }

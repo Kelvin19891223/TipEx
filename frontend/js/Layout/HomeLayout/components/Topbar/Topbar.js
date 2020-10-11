@@ -49,7 +49,11 @@ const useStyles = makeStyles(() => ({
     background: '#FFF',
     color: '#EBEEF4',
     alignItems: 'center',
-    width: '100%'
+    width: '100%',
+    padding: '0px!important',
+    '& > a': {
+      padding: 0
+    }
   },
 
   menu : {
